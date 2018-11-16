@@ -19,10 +19,8 @@ public class CalculatorFactory {
     }
 
     private Calculator makeSingle() {
-        Random r = new Random(432);
-
-        int first = r.nextInt(10);
-        int second = r.nextInt(10);
+        int first = new Random().nextInt(10);
+        int second = new Random().nextInt(10);
 
 //        int first = r.nextInt(5);
 //        int second = r.nextInt(5);
