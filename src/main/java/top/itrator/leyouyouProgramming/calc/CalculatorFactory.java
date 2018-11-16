@@ -1,7 +1,6 @@
 package top.itrator.leyouyouProgramming.calc;
 
 import com.google.common.collect.Sets;
-import org.apache.commons.math3.random.RandomDataGenerator;
 
 import java.util.Random;
 import java.util.Set;
