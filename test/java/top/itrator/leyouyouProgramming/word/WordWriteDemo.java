@@ -1,4 +1,4 @@
-package top.itrator.leyouyouProgramming.calc;
+package top.itrator.leyouyouProgramming.word;
 
 import com.google.common.collect.Lists;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
