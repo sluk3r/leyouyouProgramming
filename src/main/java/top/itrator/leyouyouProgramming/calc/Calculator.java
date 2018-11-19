@@ -45,15 +45,12 @@ public class Calculator {
         if (this == o) return true;
         if (!(o instanceof Calculator)) return false;
         Calculator that = (Calculator) o;
-        return first == that.first &&
-                last == that.last &&
-                Objects.equals(operator, that.operator);
+        return toString().equals(that.toString());
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(first, last, operator);
+        return toString().hashCode();
     }
 
     public String toString() {
