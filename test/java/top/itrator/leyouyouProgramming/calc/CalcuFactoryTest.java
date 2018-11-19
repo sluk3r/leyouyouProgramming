@@ -5,7 +5,6 @@ import com.google.common.collect.Lists;
 import org.junit.Test;
 
 import java.util.List;
-import java.util.Set;
 
 public class CalcuFactoryTest {
 
@@ -13,7 +12,26 @@ public class CalcuFactoryTest {
     public void test_make() {
         CalculatorFactory factory = new CalculatorFactory();
 
-        Set<Calculator> calculatorSet = factory.makeCalculatorSet(100);
+        int groupNum = 10;
+
+        StringBuffer  buffer = new StringBuffer();
+        buffer.append("========================================================================");
+        for (int i=0;i<groupNum;i++) {
+            buffer.append("\n\n\n\n\n\n\n\n\n");
+
+            buffer.append(singleGroup(factory));
+
+            buffer.append("\n\n\n\n\n\n\n\n\n");
+            buffer.append("========================================================================");
+        }
+
+        System.out.println(buffer.toString());
+
+    }
+
+
+    private String singleGroup(CalculatorFactory factory ) {
+        List<Calculator> calculatorSet = factory.makeCalculatorSet(100);
 
         int columnNum = 4;
 
@@ -27,7 +45,7 @@ public class CalcuFactoryTest {
             buffer.append(Joiner.on("\t\t\t\t").join(c));
             buffer.append("\n");
         }
-        System.out.println(buffer.toString());
+        return buffer.toString();
     }
 
 }
