@@ -1,26 +1,37 @@
 package top.itrator.leyouyouProgramming.calc;
 
+import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
+import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
 public class CalculatorFactory {
+    Logger logger = LogManager.getLogger(CalculatorFactory.class);
 
-    public Set<Calculator> makeCalculatorSet(int number) {
-        Set<Calculator> result = Sets.newHashSet();
+    public List<Calculator> makeCalculatorSet(int number) {
+        List<Calculator> result = Lists.newArrayList();
 
+        logger.info("about to loop");
         while (result.size() < number) {
+            logger.info(String.format("set size[%s], mumber[%s]", result.size(), number));
             Calculator calculator = makeSingle();
             result.add(calculator);
         }
+
+        logger.info("end while loop");
 
         return result;
     }
 
     private Calculator makeSingle() {
-        int first = new Random().nextInt(10);
-        int second = new Random().nextInt(10);
+        int first = new Random().nextInt(2) + 2;
+        int second = new Random().nextInt(8) + 2;
+
+        logger.info(String.format("first[%s], second[%s]", first, second));
 
 //        int first = r.nextInt(5);
 //        int second = r.nextInt(5);
