@@ -1,13 +1,11 @@
 package top.itrator.leyouyouProgramming.calc;
 
 import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import java.util.List;
 import java.util.Random;
-import java.util.Set;
 
 public class CalculatorFactory {
     Logger logger = LogManager.getLogger(CalculatorFactory.class);
