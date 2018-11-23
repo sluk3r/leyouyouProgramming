@@ -1,9 +1,9 @@
 package top.itrator.leyouyouProgramming.calc;
 
-import java.util.Objects;
 
 public class Calculator {
     public static final String multiplor = "×";
+    public static String Obelus = "÷";
 
     int first;
     int last;
