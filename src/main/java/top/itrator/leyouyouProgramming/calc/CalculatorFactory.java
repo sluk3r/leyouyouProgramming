@@ -26,8 +26,10 @@ public class CalculatorFactory {
     }
 
     private Calculator makeSingle() {
-        int first = new Random().nextInt(2) + 2;
+        int first = new Random().nextInt(4) + 2;
         int second = new Random().nextInt(8) + 2;
+//        String operator = new Random().nextBoolean() ?  Calculator.multiplor : Calculator.Obelus;
+        String operator = Calculator.multiplor;
 
         logger.info(String.format("first[%s], second[%s]", first, second));
 
@@ -39,7 +41,7 @@ public class CalculatorFactory {
 //        int second  =  generator.nextInt(5,10);
 
 //        return new Calculator(first+5, second+5, Calculator.multiplor);
-        return new Calculator(first, second, Calculator.multiplor);
+        return new Calculator(first, second, operator);
     }
 
 }
