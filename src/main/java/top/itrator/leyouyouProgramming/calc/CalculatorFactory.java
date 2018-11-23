@@ -26,7 +26,7 @@ public class CalculatorFactory {
     }
 
     private Calculator makeSingle() {
-        int first = new Random().nextInt(4) + 2;
+        int first = new Random().nextInt(6) + 2;
         int second = new Random().nextInt(8) + 2;
 //        String operator = new Random().nextBoolean() ?  Calculator.multiplor : Calculator.Obelus;
         String operator = Calculator.multiplor;
