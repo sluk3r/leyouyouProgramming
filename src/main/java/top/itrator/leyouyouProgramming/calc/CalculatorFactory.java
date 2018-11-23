@@ -26,22 +26,32 @@ public class CalculatorFactory {
     }
 
     private Calculator makeSingle() {
+        return new Random().nextBoolean() ? makeByCalculator() : makeObelusCalculator();
+    }
+
+    private Calculator makeObelusCalculator() {
         int first = new Random().nextInt(6) + 2;
         int second = new Random().nextInt(8) + 2;
-//        String operator = new Random().nextBoolean() ?  Calculator.multiplor : Calculator.Obelus;
+        while (second % first != 0 || first == second) {
+            first = new Random().nextInt(6) + 2;
+            second = new Random().nextInt(8) + 2;
+        }
+        String operator = Calculator.Obelus;
+
+        Calculator result  = new Calculator(second, first, operator);
+        logger.info(result.toString());
+        return result;
+
+    }
+
+    private Calculator makeByCalculator() {
+        int first = new Random().nextInt(6) + 2;
+        int second = new Random().nextInt(8) + 2;
         String operator = Calculator.multiplor;
 
-        logger.info(String.format("first[%s], second[%s]", first, second));
-
-//        int first = r.nextInt(5);
-//        int second = r.nextInt(5);
-
-//        RandomDataGenerator generator = new RandomDataGenerator();
-//        int first  =  generator.nextInt(5,10);
-//        int second  =  generator.nextInt(5,10);
-
-//        return new Calculator(first+5, second+5, Calculator.multiplor);
-        return new Calculator(first, second, operator);
+        Calculator result  = new Calculator(second, first, operator);
+        logger.info(result.toString());
+        return result;
     }
 
 }

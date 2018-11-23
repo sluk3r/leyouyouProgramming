@@ -31,7 +31,7 @@ public class CalcuFactoryTest {
 
 
     private String singleGroup(CalculatorFactory factory ) {
-        List<Calculator> calculatorSet = factory.makeCalculatorSet(100);
+        List<Calculator> calculatorSet = factory.makeCalculatorSet(120);
 
         int columnNum = 4;
 
